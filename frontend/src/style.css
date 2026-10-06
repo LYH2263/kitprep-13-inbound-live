@@ -165,6 +165,13 @@ th { color: var(--kp-muted); font-weight: 700; font-size: 0.75rem; }
 }
 .btn:hover { filter: brightness(1.06); }
 .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.num-input {
+  width: 6rem; padding: 0.3rem 0.45rem;
+  background: rgba(255,255,255,0.75); color: var(--kp-ink);
+  border: 2px solid var(--kp-steel-dk); border-radius: 2px;
+  font: inherit; font-size: 0.82rem;
+}
+.num-input:focus { outline: 2px solid var(--kp-accent); outline-offset: 1px; }
 .muted { color: var(--kp-muted); }
 .stat { font-size: 1.5rem; font-weight: 800; }
 
