@@ -45,3 +45,11 @@ class PrepRun(Base):
     order_id: Mapped[int] = mapped_column(ForeignKey("kitchen_orders.id"))
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     result_json: Mapped[str] = mapped_column(Text, default="{}")
+
+class StockReceipt(Base):
+    """入库流水：每条入库在此留痕，并在同一事务内累加到 Ingredient.stock_qty。"""
+    __tablename__ = "stock_receipts"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    ingredient_id: Mapped[int] = mapped_column(ForeignKey("ingredients.id"))
+    qty: Mapped[float] = mapped_column(Float)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
